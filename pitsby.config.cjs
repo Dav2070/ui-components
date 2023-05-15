@@ -50,8 +50,6 @@ module.exports = {
 		"./dist/src/toggle/toggle.styles.js",
 		"./dist/src/svg/arrow-left-light.js",
 		"./dist/src/svg/chevron-down-light.js",
-		"./dist/src/svg/pen-light.js",
-		"./dist/src/svg/plus-light.js",
 		"./dist/src/svg/xmark-light.js",
 		"./node_modules/@lit/reactive-element/reactive-element.js",
 		"./node_modules/@lit/reactive-element/reactive-element.js.map",
