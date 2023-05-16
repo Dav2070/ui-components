@@ -4,7 +4,8 @@ import { classMap } from "lit/directives/class-map.js"
 import { ButtonColor, ButtonSize } from "../types.js"
 import {
 	convertStringToButtonColor,
-	convertStringToButtonSize
+	convertStringToButtonSize,
+	getGlobalStyleHtml
 } from "../utils.js"
 import { globalStyles } from "../styles.js"
 import { buttonStyles } from "./button.styles.js"
@@ -83,6 +84,8 @@ export class Button extends LitElement {
 		this.buttonClasses.disabled = this.disabled
 
 		return html`
+			${getGlobalStyleHtml()}
+
 			<button
 				class=${classMap(this.buttonClasses)}
 				?aria-disabled=${this.disabled}

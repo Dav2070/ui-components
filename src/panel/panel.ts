@@ -4,6 +4,7 @@ import { query } from "lit/decorators/query.js"
 import { classMap } from "lit/directives/class-map.js"
 import { styleMap } from "lit/directives/style-map.js"
 import { xmarkLightSvg } from "../svg/xmark-light.js"
+import { getGlobalStyleHtml } from "../utils.js"
 import { globalStyles } from "../styles.js"
 import { panelStyles } from "./panel.styles.js"
 import { slideIn, slideOut } from "./panel.animations.js"
@@ -71,6 +72,8 @@ export class Panel extends LitElement {
 		}
 
 		return html`
+			${getGlobalStyleHtml()}
+
 			<div id="container" style=${styleMap(this.containerStyles)}>
 				<div id="overlay" @click=${this.overlayClick}></div>
 

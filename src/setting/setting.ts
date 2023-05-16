@@ -1,5 +1,6 @@
 import { LitElement, html } from "lit"
 import { customElement, property } from "lit/decorators.js"
+import { getGlobalStyleHtml } from "../utils.js"
 import { globalStyles } from "../styles.js"
 import { settingStyles } from "./setting.styles.js"
 
@@ -13,6 +14,8 @@ export class Setting extends LitElement {
 
 	render() {
 		return html`
+			${getGlobalStyleHtml()}
+
 			<div id="setting-container">
 				<p id="setting-header">
 					${this.header}

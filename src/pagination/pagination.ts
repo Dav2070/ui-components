@@ -1,6 +1,7 @@
 import { LitElement, html } from "lit"
 import { customElement, property, state } from "lit/decorators.js"
 import { classMap } from "lit/directives/class-map.js"
+import { getGlobalStyleHtml } from "../utils.js"
 import { globalStyles } from "../styles.js"
 import { paginationStyles } from "./pagination.styles.js"
 import { arrowLeftLightSvg } from "../svg/arrow-left-light.js"
@@ -156,6 +157,8 @@ export class Pagination extends LitElement {
 		this.reducedEnd = this.pages >= 8 && this.currentPage <= this.pages - 4
 
 		return html`
+			${getGlobalStyleHtml()}
+
 			<div class="container">
 				${this.getBackButton()} ${this.getPageButtons()}
 				${this.getForwardButton()}

@@ -2,7 +2,7 @@ import { LitElement, html } from "lit"
 import { customElement, property, state } from "lit/decorators.js"
 import { classMap } from "lit/directives/class-map.js"
 import { ListItemSize } from "../types.js"
-import { convertStringToListItemSize } from "../utils.js"
+import { convertStringToListItemSize, getGlobalStyleHtml } from "../utils.js"
 import { globalStyles } from "../styles.js"
 import { listItemStyles } from "./list-item.styles.js"
 
@@ -66,6 +66,8 @@ export class ListItem extends LitElement {
 		this.listItemContainerClasses.small = this.size == ListItemSize.small
 
 		return html`
+			${getGlobalStyleHtml()}
+
 			<div class=${classMap(this.listItemContainerClasses)} tabindex="0">
 				${this.getImage()}
 
